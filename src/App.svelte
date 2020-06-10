@@ -1,55 +1,95 @@
 <script>
-	export let name;
+	import Header from './Components/Header.svelte';
+	
 </script>
+<Header />
 
 <main>
-<header id="header" class="fixed-top d-flex align-items-center">
-
-    <div class="container d-flex align-items-center m-5">
-
-      <div class="logo mr-auto">
-        <h1><a href="index.html">BAGOMH</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
-
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="#header">Inicio</a></li>
-          <li class="drop-down"><a href="#nada">Temas</a>
-            <ul>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#team">Team</a></li>             
-            </ul>
-          </li>
-          <li><a href="#services">Servicios</a></li>
-          <li><a href="#portfolio">Introducción</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#contact">Contacto</a></li>
-
-        </ul>
-      </nav><!-- .nav-menu -->
-
-      <div class="header-social-links">
-        <a href="https://www.facebook.com/ballos.ort" class="facebook"><i class="icofont-facebook"></i></a>
-        <a href="https://www.instagram.com/elias.06.05/?hl=es-la" class="instagram"><i class="icofont-instagram"></i></a>
-      </div>
-
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+<p>
+</p>
+    <div class="container text-center text-md-left" data-aos="fade-up">
+      <h1>Bienvenido a <span>MPBA</span></h1>
+      <h2>Somos un equipo</h2>
+      <p></p>
+      <a class="btn btn-primary" data-toggle="tooltip" title="Conoce lo que tenemos para ti." href="#services"> Servicios </a>
     </div>
-  </header>
+  </section>
 
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
 
 <style>
+		/*--------------------------------------------------------------
+  # Hero
+  --------------------------------------------------------------*/
+  #hero {
+	width: 100%;
+	height: 60vh;
+	background: url("/img/hero-bg.jpg") center center;
+	background-size: cover;
+	position: relative;
+	margin-top: 70px;
+	padding: 0;
+  }
+  
+  #hero:before {
+	content: "";
+	background: rgba(56, 64, 70, 0.7);
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+  }
+  
+  #hero .container {
+	z-index: 2;
+  }
+  
+  #hero h1 {
+	margin: 0 0 10px 0;
+	font-size: 48px;
+	font-weight: 700;
+	line-height: 56px;
+	color: #fff;
+  }
+  
+  #hero h1 span {
+	border-bottom: 4px solid #3498db;
+  }
+  
+  #hero h2 {
+	color: rgba(255, 255, 255, 0.8);
+	margin-bottom: 30px;
+	font-size: 24px;
+  }
+  
+  
+  @media (max-width: 992px) {
+	#hero {
+	  height: calc(100vh - 70px);
+	}
+  }
+  
+  @media (max-width: 768px) {
+	#hero h1 {
+	  font-size: 30px;
+	  line-height: 36px;
+	}
+	#hero h2 {
+	  font-size: 18px;
+	  line-height: 24px;
+	  margin-bottom: 30px;
+	}
+  }
 	main {
+
 		text-align: center;
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
+	
 	}
-
 	h1 {
 		color: #ff3e00;
 		text-transform: uppercase;

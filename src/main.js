@@ -3,7 +3,7 @@ import App from './App.svelte';
 const app = new App({
 	target: document.body,
 	props: {
-		name: 'Miguel'
+		name: 'Web'
 	}
 });
 $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
@@ -84,6 +84,11 @@ $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
 
   if ($(window).scrollTop() > 100) {
     $('#header').addClass('header-scrolled');
+  }
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    $('#hero').css({
+      height: $(window).height()
+    });
   }
 
 

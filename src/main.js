@@ -1,12 +1,9 @@
 import App from './App.svelte';
 
 const app = new App({
-	target: document.body,
-	props: {
-		name: 'Web'
-	}
+	target: document.body
 });
-$(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
+/* $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       e.preventDefault();
       var target = $(this.hash);
@@ -44,11 +41,11 @@ $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
         return false;
       }
     }
-  });
+  }); */
   //tooltip
  
   // Mobile Navigation
-  if ($('.nav-menu').length) {
+/*   if ($('.nav-menu').length) {
     var $mobile_nav = $('.nav-menu').clone().prop({
       class: 'mobile-nav d-lg-none'
     });
@@ -90,6 +87,6 @@ $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
       height: $(window).height()
     });
   }
-
+ */
 
 export default app;

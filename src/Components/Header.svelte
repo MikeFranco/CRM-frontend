@@ -4,7 +4,7 @@
     <div class="container d-flex align-items-center m-5">
 
       <div class="logo mr-auto">
-        <h1><a href="index.html">BAGOMH</a></h1>
+        <h1><a href="index.html">MPBA</a></h1>
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
@@ -22,7 +22,8 @@
           <li><a href="#contact">Contacto</a></li>
 
         </ul>
-      </nav><!-- .nav-menu -->
+      </nav>
+      <!-- .nav-menu -->
 
       <div class="header-social-links">
         <a href="https://www.facebook.com/ballos.ort" class="facebook"><i class="icofont-facebook"></i></a>

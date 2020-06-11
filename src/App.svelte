@@ -1,6 +1,6 @@
 <script>
-	import Header from './Components/Header.svelte';
-	import Hero from './Components/Hero.svelte';
+	import Header from './components/Header.svelte';
+	import Hero from './components/Hero.svelte';
 </script>
 <Header />
 <Hero />

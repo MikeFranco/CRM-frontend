@@ -5,7 +5,6 @@
       <h1>Bienvenido a <span>MPBA</span></h1>
       <h2>Somos un equipo</h2>
       <p></p>
-      <a class="btn btn-primary" data-toggle="tooltip" title="Conoce lo que tenemos para ti." href="#services"> Servicios </a>
     </div>
   </section>
   <style> 

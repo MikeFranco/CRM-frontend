@@ -14,7 +14,7 @@
 <Hero />
 <main id="main">
 <br>
-<Tabs {activeitem} {items} on:tabChange={tabChange}  />
+<!--> <Tabs {activeitem} {items} on:tabChange={tabChange}  />
 {#if activeitem === 'Usuarios' }
 <Users />
 {:else if activeitem === 'Delegacion'}
@@ -22,6 +22,7 @@
 {:else if activeitem === 'Productos'}
 <Products />
 {/if}
+-->
 </main>
 
 

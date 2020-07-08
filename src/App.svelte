@@ -2,6 +2,10 @@
   	import { Router, Route, Link } from "svelte-routing";
   	import Home from "./Home.svelte";
   	import Login from "./Login.svelte";
+	import Delegaciones from "./components/Dashdelegaciones.svelte";
+	import Users from "./components/Dashusers.svelte";
+	import Products from "./components/DashProducts.svelte";
+	import User from "./components/RegisterUser.svelte";
   	export let url = ""; //This property is necessary declare to avoid ignore the Router
 </script>
 <Router url="{url}">
@@ -13,21 +17,23 @@
         <h1><a href="/">MPBA</a></h1>
       </div>
 
-      <nav class="nav-menu d-none d-lg-block">
+      <nav class="nav-menu d-none d-lg-block d-flex align-items-center">
         <ul>
           <li class="active"><a href="/">Home</a></li>
-          <li class="drop-down"><a href="#nada">Temas</a>
+          <li class="drop-down"><a href="#nada">Dashboard</a>
             <ul>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#team">Team</a></li>             
+              <li><a href="#h"><Link to="Users">Users</Link></li>
+              <li><a href="#h"><Link to="Products">Products</Link></li>
+			  <li><a href="#h"><Link to="Delegaciones">Delegaciones</Link></li>              
             </ul>
           </li>
-          <li><a href="#services">Servicios</a></li>
-          <li><a href="#portfolio">Introducción</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#contact">Contacto</a></li>
-		  <li><a href="#contact"> </a></li>
-		  <li><Link to="Login">Login</Link></li>
+		  <li class="drop-down"><a href="#nada">Register</a>
+            <ul>
+              <li><a href="#h"><Link to="User">User</Link></li>
+              <li><a href="#h">Grups</li>             
+            </ul>
+          </li>
+		  <li><a href="#h"><Link to="Login">Login</Link></a></li>
 
         </ul>
       </nav>
@@ -44,6 +50,11 @@
 </header>
   <div>
     <Route path="Login" component="{Login}" /> 
+	<Route path="Users" component="{Users}" /> 
+	<Route path="User" component="{User}" />
+	<Route path="Delegaciones" component="{Delegaciones}" /> 
+	<Route path="Products" component="{Products}" /> 
+
     <!--for now the router just support case sensitive,
         one workaround colud be add two time the route
         Example.

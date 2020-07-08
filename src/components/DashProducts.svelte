@@ -1,8 +1,10 @@
 <script>
 import Chart from './charts/Products.svelte';
-let data=[30,19,19];
+let data=[30,19,19,70];
 </script>
-
+<br>
+<br>
+<br>
 <div class="container">
 		<div class="row">
 			 	<div id="clientes" class="col-12 col-md-4 col-lg-6 d-flex justify-content-center">
@@ -26,7 +28,14 @@ let data=[30,19,19];
 										<h5 class="card-title">Camas</h5>
 											<h5>{data[2]} uds</h5>			
             						</div>
-          						</article>       				
+          						</article>
+								<article class="card" style="width: 100%;height:18%;background: #9966FF;">
+                					<div class="card-body">
+										<h5 class="card-title">Colchones</h5>
+											<h5>{data[3]} uds</h5>			
+            						</div>
+          						</article>
+								      				
             			</div>
           			</article>
         		</div>	

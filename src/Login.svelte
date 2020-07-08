@@ -27,25 +27,25 @@
 						<input class="input100" type="password" name="pass" placeholder="Enter password">
 						<span class="focus-input100"></span>
 					</div>
-
-					<div class="flex-sb-m w-full p-b-30">
-						<div class="contact100-form-checkbox">
+        <div class=" container">
+					<div class="flex-sb-m w-full p-b-30 row">
+						<div class="contact100-form-checkbox col-12 col-md-4 col-lg-6 d-flex justify-content-center ">
 							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
 							<label class="label-checkbox100" for="ckb1">
 								Remember me
 							</label>
 						</div>
-
-						<div>
-							<a href="$" class="txt1 justify-content-center">
+              <div>
+              	<a href="$" class="txt1 justify-content-center col-12 col-md-4 col-lg-6 d-flex justify-content-center">
 								Forgot Password?
-							</a>
-						</div>
+							  </a>
+              </div>
 					</div>
+          </div>
 					<Router url="{url}">
 
 					<div class="container-login100-form-btn justify-content-center">
-						<a href="/" class="button button1">Login</a>
+						<a href="/" class="btn btn-outline-primary button" type="button" style="width:100%;">Login</a>
 					</div>
 					</Router>
 				</form>
@@ -64,11 +64,11 @@
 	padding: 0;
   }
   .button:hover {
-    background-color: #4CAF50;
+    background-color: #3498db;
     color: white;
 }
 a:hover, a:active {
-    color: #4CAF50;
+    color:  #3498db;
 }
 a:active, a:hover {
     outline-width: 0;
@@ -76,7 +76,7 @@ a:active, a:hover {
 .button {
     background-color: white;
     color: black;
-    border: 2px solid #4CAF50;
+    border: 2px solid  #3498db;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -156,7 +156,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #57b846;
+  color:  #3498db;
 }
 
 /*---------------------------------------------*/
@@ -328,7 +328,7 @@ label {
   -moz-transition: all 0.6s;
   transition: all 0.6s;
 
-  background: #57b846;
+  background:  #3498db;
 }
 
 
@@ -394,7 +394,7 @@ input.input100 {
 }
 
 .input-checkbox100:checked + .label-checkbox100::before {
-  color: #57b846;
+  color: #3498db;
 }
 
 /*------------------------------------------------------------------

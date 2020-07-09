@@ -1,16 +1,20 @@
 <script>
 import { createEventDispatcher } from 'svelte';
 const dispatch = createEventDispatcher();
-export let items;
+export let AP ;
 export let activeitem;
 </script>
 
 <div class="tabs">
     <ul>
-        {#each items as item}
-          <li on:click ={() => dispatch('tabChange', item)}>
-                <div class:active={item === activeitem}>
-                    {item}
+        {#each AP as ap }
+            
+          <li on:click ={() => dispatch('tabChange', ap)}>
+                <div class:active={ap === activeitem} class="col-md-12"{ap}>
+                    <label> {ap}
+                    <input  type="checkbox" name={ap}>
+                    <span class=" check"> </span>
+                    </label>
                 </div>
             </li>
         {/each}    
@@ -22,21 +26,59 @@ export let activeitem;
         margin-bottom: 40px;
 
     }
-    ul{
-        display: flex;
-        justify-content: center;
-        padding: 0px;
+  
+   ul li{
         list-style-type: none;
-            }
-    li{
+        position: relative;
         margin: 0px 16px;
-        font-size: 28px;
+        font-size: 18px;
         color:gray;
         cursor: pointer;
     }
-    .active{
-        color: #3498db;
-        border-bottom: 2px solid #3498db;
-        padding-bottom: 8px;
+     ul li:last-child{
+        border-bottom: none;
     }
+    
+       ul li label{
+        font-size: 18px;
+
+    }
+       ul li label input{
+        opacity:0 ;
+        
+    }
+      ul li label .check{
+        position: absolute;
+        top: 10%;
+        left: -10px;
+        width: 20px;
+        height:  20px;
+        display: block;
+        background: #000;
+        box-sizing: border-box;
+        border-radius: 4px;
+
+    }
+    ul li label .check:before{
+       content: '';
+       position: absolute;
+        top: 3px;
+        left: 3px;
+        right: 3px;
+        bottom: 3px;
+        background: #000b10;
+        border-radius: 2px;
+        transition: 0.5s;
+        transform: translateX(400px);
+    }
+
+ul li label input:checked ~ .check:before{
+    
+        background: #adff00;
+        box-shadow: 0 0 15px #adff00;
+        transform: translateX(0px);
+
+}
+
+
 </style>

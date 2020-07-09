@@ -19,7 +19,7 @@ let data=[30,19,19,56,78,32,12,34,32,56,78,11,23,154,123,54];
 			 	<div id="delegaciones" class="col-12 col-md-4 col-lg-6 d-flex justify-content-center">
           			<article class="card" style="width: 100%; height: 100%;">
                 		<div class="card-body">
-							<h5 class="card-title"> Usuarios por Alcaldias</h5>
+							<h5 class="card-title"> Users by district</h5>
 							   <article class="card" style="width: 100%;height:12%;background: #FFFFFF;">
                 					<div class="card-body">
 										<h5 class="card-title">Álvaro Obregón</h5>
@@ -74,7 +74,7 @@ let data=[30,19,19,56,78,32,12,34,32,56,78,11,23,154,123,54];
             <div id="delegaciones" class="col-12 col-md-4 col-lg-6 d-flex justify-content-center">
                 <article class="card" style="width: 100%; height: 100%;">
                     <div class="card-body">
-              <h5 class="card-title">Usuarios por Alcaldias</h5>
+              <h5 class="card-title">Users by district</h5>
                     <article class="card" style="width: 100%;height:12%;background: #00FF00 ;">
                               <div class="card-body">
                         <h5 class="card-title">Iztapalapa</h5>

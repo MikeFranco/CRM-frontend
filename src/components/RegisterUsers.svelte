@@ -37,6 +37,19 @@
     event.preventDefault();
     console.log("%c⧭", "color: #e57373", "submit");
   };
+
+  let t = " ya estoy hasta la puta madre";
+  let colr = "purple";
+  const myFunctio = () => {
+    let t;
+    var div = document.getElementById("snackbar");
+    document.getElementById("snackbar").style.backgroundColor = colr;
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function() {
+      x.className = x.className.replace("show", "");
+    }, 3000);
+  };
 </script>
 
 <style>
@@ -55,6 +68,43 @@
     font-weight: 700;
     line-height: 56px;
     color: #fff;
+  }
+  input:invalid {
+    border: 2px solid red;
+  }
+
+  input:valid {
+    border: 2px solid gray;
+  }
+  button:hover {
+    background-color: #3498db;
+    color: white;
+  }
+  button:active,
+  button:hover {
+    outline-width: 0;
+  }
+  button {
+    background-color: white;
+    color: black;
+    border: 2px solid #3498db;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 20px;
+  }
+  button {
+    color: inherit;
+  }
+  button {
+    background-color: transparent;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
   }
 </style>
 
@@ -77,7 +127,8 @@
                 name="name"
                 type="text"
                 placeholder="First Name"
-                class="form-control" />
+                class="form-control"
+                required />
             </div>
           </div>
           <div class="form-group d-flex justify-content-center">
@@ -105,7 +156,8 @@
                 name="name"
                 type="text"
                 placeholder="First Last Name"
-                class="form-control" />
+                class="form-control"
+                required />
             </div>
           </div>
           <div class="form-group d-flex justify-content-center">
@@ -133,7 +185,8 @@
                 name="email"
                 type="text"
                 placeholder="Email Address"
-                class="form-control" />
+                class="form-control"
+                required />
             </div>
           </div>
           <div class="form-group d-flex justify-content-center">
@@ -147,7 +200,8 @@
                 name="phone"
                 type="text"
                 placeholder="Phone"
-                class="form-control" />
+                class="form-control"
+                required />
             </div>
           </div>
           <div class="form-group d-flex justify-content-center">
@@ -215,6 +269,12 @@
                   style="width:100%;">
                   Submit
                 </a> -->
+            </div>
+            <div class="form-group d-flex justify-content-center">
+              <div class="col-md-6 text-center">
+                <button on:click={() => myFunctio()}>Submit</button>
+                <div id="snackbar">{t}</div>
+              </div>
             </div>
           </div>
         </form>

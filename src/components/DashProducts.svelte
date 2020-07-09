@@ -1,10 +1,27 @@
 <script>
 import Chart from './charts/Products.svelte';
 let data=[30,19,19,70];
+let t= " ya estoy hasta la puta madre";
+let colr="purple";
+const myFunctio =()=> {
+	 let t;
+	 var div = document.getElementById( 'snackbar' );
+	document.getElementById("snackbar").style.backgroundColor=colr;
+  var x = document.getElementById("snackbar");
+  x.className = "show";  
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
 </script>
 <br>
 <br>
 <br>
+<div class="form-group d-flex justify-content-center">
+    <div class="col-md-6 text-center">  
+    	<button on:click={() => myFunctio()}>Submit</button>   
+    		<div id="snackbar">{t}
+			</div>                
+    </div>					
+</div>
 <div class="container">
 		<div class="row">
 			 	<div id="clientes" class="col-12 col-md-4 col-lg-6 d-flex justify-content-center">

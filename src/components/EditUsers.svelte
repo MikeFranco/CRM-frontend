@@ -5,7 +5,16 @@
 	const tabChange = (e) => {
 		activeitem = e.detail;
 	} 
-
+    let t= " ya estoy hasta la puta madre";
+    let colr="purple";
+    const myFunctio =()=> {
+        let t;
+        var div = document.getElementById( 'snackbar' );
+        document.getElementById("snackbar").style.backgroundColor=colr;
+    var x = document.getElementById("snackbar");
+    x.className = "show";  
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
 </script>
 <div class="container aligin-items-center">
     <div class="row">
@@ -29,13 +38,21 @@
      </div>
     
     </div>
+
               
 </div>
+<div class="form-group d-flex justify-content-center">
+                            <div class="col-md-6 text-center">
+                           <button on:click={() => myFunctio()}>Submit</button>   
+                                <div id="snackbar">{t}
+                                </div>  
+                            </div>              
+                        </div>
 <style>
   #Reg {
 	width: 100%;
 	height: 30vh;
-	background: url("/img/welcom.jpg") center center;
+	background: url("/img/Edit.jpg") center center;
 	background-size: cover;
 	position: relative;
 	margin-top: 70px;

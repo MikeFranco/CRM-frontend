@@ -19,13 +19,13 @@
 				<form class="login100-form validate-form">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
 						<span class="label-input100">Username</span>
-						<input class="input100" type="text" name="username" placeholder="Enter username">
+						<input class="input100" type="text" name="username" placeholder="Enter username" required>
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
 						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Enter password">
+						<input class="input100" type="password" name="pass" placeholder="Enter password" required>
 						<span class="focus-input100"></span>
 					</div>
         <div class=" container">
@@ -42,10 +42,11 @@
 					<div class="container-login100-form-btn justify-content-center">
               <div class="row">
                 <div class="col-12 col-md-4 col-lg-6 ">
-            <a href="/" class="btn btn-outline-primary button" type="button" style="width:100%;">Login</a>
+                <button onclick="myFunction()">Login</button>
+           
                 </div>
             <div class="col-12 col-md-4 col-lg-6 ">
-            <a href="Signup" class="btn btn-outline-primary button" type="button" style="width:100%;">Sign up</a>
+             <a href="Signup" class="btn btn-outline-primary button" type="button" style="width:100%;">Sign up</a>
                </div>
               </div>
 					</div>
@@ -78,13 +79,13 @@
     background-color: #3498db;
     color: white;
 }
-a:hover, a:active {
+button:hover, button:active , a:hover, a:active {
     color:  #3498db;
 }
-a:active, a:hover {
+button:active, button:hover, a:hover, a:active {
     outline-width: 0;
 }
-.button {
+button, .button{
     background-color: white;
     color: black;
     border: 2px solid  #3498db;
@@ -95,10 +96,10 @@ a:active, a:hover {
     font-size: 16px;
     margin-left: 20px;
 }
-a {
+button, a {
     color: inherit;
 }
-a {
+button, a {
     background-color: transparent;
 }
 *, *:before, *:after {

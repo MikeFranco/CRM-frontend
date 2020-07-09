@@ -1,10 +1,27 @@
 <script>
 import Chart from './charts/Delegacion.svelte';
 let data=[30,19,19,56,78,32,12,34,32,56,78,11,23,154,123,54];
+let t= " ya estoy hasta la puta madre";
+let colr="purple";
+const myFunctio =()=> {
+	 let t;
+	 var div = document.getElementById( 'snackbar' );
+	document.getElementById("snackbar").style.backgroundColor=colr;
+  var x = document.getElementById("snackbar");
+  x.className = "show";  
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
 </script>
 <br>
 <br>
 <br>
+<div class="form-group d-flex justify-content-center">
+    <div class="col-md-6 text-center">  
+    	<button on:click={() => myFunctio()}>Submit</button>   
+    		<div id="snackbar">{t}
+			</div>                
+    </div>					
+</div>
 <div class="container">
 		<div class="row justify-content-center">
 			<div id="DashCliente" class="col-12 col-md-12 col-lg-6 d-flex justify-content-center">

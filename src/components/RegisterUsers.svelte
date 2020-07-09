@@ -1,3 +1,15 @@
+<script>
+let t= " ya estoy hasta la puta madre";
+let colr="purple";
+const myFunctio =()=> {
+	 let t;
+	 var div = document.getElementById( 'snackbar' );
+	document.getElementById("snackbar").style.backgroundColor=colr;
+  var x = document.getElementById("snackbar");
+  x.className = "show";  
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+</script>
 <div class="container aligin-items-center">
     <div class="row">
         <div class="col-md-12">
@@ -10,7 +22,7 @@
                         <div class="form-group d-flex justify-content-center">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
-                                <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
+                                <input id="fname" name="name" type="text" placeholder="First Name" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group d-flex justify-content-center">
@@ -22,7 +34,7 @@
                         <div class="form-group d-flex justify-content-center">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
-                                <input id="firstLastName" name="name" type="text" placeholder="First Last Name" class="form-control">
+                                <input id="firstLastName" name="name" type="text" placeholder="First Last Name" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group d-flex justify-content-center">
@@ -34,13 +46,13 @@
                         <div class="form-group d-flex justify-content-center">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
                             <div class="col-md-8">
-                                <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
+                                <input id="email" name="email" type="text" placeholder="Email Address" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group d-flex justify-content-center" >
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
                             <div class="col-md-8">
-                                <p>District:             <select name="transporte"  id="lista" >
+                                <p>District:             <select name="transporte"  id="lista" required >
                                 <option value ="">--Select a option--</option>
                                 <option value ="Álvaro Obregón">Álvaro Obregón</option>
                                 <option value ="Azcapotzalco">Azcapotzalco</option>
@@ -69,7 +81,10 @@
                         </div>
                         <div class="form-group d-flex justify-content-center">
                             <div class="col-md-6 text-center">
-                            <a href="/" class="btn btn-outline-primary button" type="button" style="width:100%;">Submit</a>                            </div>
+                           <button on:click={() => myFunctio()}>Submit</button>   
+                                <div id="snackbar">{t}
+                                </div>  
+                            </div>              
                         </div>
                     </fieldset>
                 </form>
@@ -93,6 +108,40 @@
 	font-weight: 700;
 	line-height: 56px;
 	color: #fff;
+}
+input:invalid {
+  border: 2px solid red;
+}
+
+input:valid {
+  border: 2px solid gray;
+}
+button:hover {
+    background-color: #3498db;
+    color: white;
+}
+button:active, button:hover {
+    outline-width: 0;
+}
+button{
+    background-color: white;
+    color: black;
+    border: 2px solid  #3498db;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 20px;
+}
+button {
+    color: inherit;
+}
+button {
+    background-color: transparent;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 </style>

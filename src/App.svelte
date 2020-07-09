@@ -9,6 +9,8 @@
 	import User from "./components/RegisterUsers.svelte";
 	import Grups from "./components/RegisterGrup.svelte";
 	import EUser from "./components/EditUsers.svelte";
+	import VUser from "./components/ViewUsers.svelte";
+	import VGrups from "./components/ViewGrups.svelte";
   	export let url = ""; //This property is necessary declare to avoid ignore the Router
 </script>
 <Router url="{url}">
@@ -27,7 +29,7 @@
             <ul>
               <li><a href="Users">Users</li>
               <li><a href="Products">Products</li>
-			  <li><a href="Delegaciones">Delegaciones</li>              
+			  <li><a href="Delegaciones">Districts</li>              
             </ul>
           </li>
 		  <li class="drop-down"><a href="#nada">Create</a>
@@ -40,6 +42,12 @@
             <ul>
               <li><a href="EUser">User</li>
               <li><a href="EGrups">Grups</li>             
+            </ul>
+          </li>
+		  <li class="drop-down"><a href="#nada">View</a>
+            <ul>
+              <li><a href="VUser">Users</li>
+              <li><a href="VGrups">Grups</li>             
             </ul>
           </li>
 		  <li><a href="Login">Login</a></li>
@@ -66,7 +74,8 @@
 	<Route path="Products" component="{Products}" /> 
 	<Route path="Grups" component="{Grups}" /> 
 	<Route path="EUser" component="{EUser}" /> 
-
+	<Route path="VUser" component="{VUser}" />
+	<Route path="VGrups" component="{VGrups}" />
     <!--for now the router just support case sensitive,
         one workaround colud be add two time the route
         Example.

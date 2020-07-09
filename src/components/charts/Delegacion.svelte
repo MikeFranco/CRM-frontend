@@ -27,13 +27,9 @@
               "rgba(255, 255, 255, 0.8)",
               "rgba(192, 192, 192, 0.8)",
               "rgba(128, 128, 128, 0.8",
-              "rgba(0, 0, 0, 0.8)",
+              "rgba(0, 0, 0, 0.8)"
             ],
             borderColor: [
-              "rgb(255, 255, 255)",
-              "rgb(192, 192, 192)",
-              "rgb(128, 128, 128)",
-              "rgb(0, 0, 0)",
               "rgb(255, 0, 0)",
               "rgb(128, 0, 0)",
               "rgb(255, 255, 0)",
@@ -45,7 +41,11 @@
               "rgb(0, 0, 255)",
               "rgb(0, 0, 128)",
               "rgb(255, 0, 255)",
-              "rgb(128, 0, 128)"
+              "rgb(128, 0, 128)",
+              "rgb(255, 255, 255)",
+              "rgb(192, 192, 192)",
+              "rgb(128, 128, 128)",
+              "rgb(0, 0, 0)"
             ],
             borderWidth: 1
           }
@@ -56,7 +56,7 @@
         responsive: true,
         legend: {
           display: false,
-          position: 'bottom',
+          position: "bottom",
           reverse: true
         },
         rotation: 0.5 * Math.PI

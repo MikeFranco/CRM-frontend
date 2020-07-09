@@ -28,9 +28,12 @@
   onMount(getChartInfo);
 </script>
 
-<br />
-<br />
-<br />
+<style>
+  .container {
+    margin-top: 20vh;
+  }
+</style>
+
 <div class="container">
   <div class="row justify-content-center">
     <div
@@ -38,6 +41,7 @@
       class="col-12 col-md-12 col-lg-6 d-flex justify-content-center">
       <article class="card" style="width: 100%;">
         <div class="card-body">
+          <h5 class="card-title">Usuarios por Alcaldias</h5>
           {#if showChart}
             <Delegacion {data} {labels} />
           {/if}

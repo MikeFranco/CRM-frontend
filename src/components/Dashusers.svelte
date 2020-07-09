@@ -48,9 +48,12 @@
   onMount(userConsumers);
 </script>
 
-<br />
-<br />
-<br />
+<style>
+  .container {
+    margin-top: 20vh;
+  }
+</style>
+
 {#if showChart}
   <div class="container">
     <div class="row">
@@ -90,6 +93,7 @@
         class="col-12 col-md-4 col-lg-6 d-flex justify-content-center">
         <article class="card" style="width: 100%;">
           <div class="card-body">
+            <h5 class="card-title">Clients</h5>
             <Usern {datan} labels={labelsClients} />
           </div>
         </article>
@@ -99,6 +103,7 @@
         class="col-12 col-md-4 col-lg-6 d-flex justify-content-center">
         <article class="card" style="width: 100%;">
           <div class="card-body">
+            <h5 class="card-title">Consumers</h5>
             <Userc {datac} labels={labelsConsumersData} />
           </div>
         </article>

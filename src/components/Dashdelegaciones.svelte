@@ -5,6 +5,9 @@
   let data;
   let labels;
   let showChart = false;
+  let message;
+  let color;
+
   const getChartInfo = () => {
     const adminId = "5f065d34b89f6c5b54174eca";
     axios
@@ -22,15 +25,14 @@
         showChart = true;
       })
       .catch(error => {
+        showSnackbar("Hubo un error al conectar con la base de datos", "red");
         console.error(error);
       });
   };
-  let t = " ya estoy hasta la puta madre";
-  let colr = "purple";
-  const myFunctio = () => {
-    let t;
+  const showSnackbar = (text, color) => {
+    message = text;
     var div = document.getElementById("snackbar");
-    document.getElementById("snackbar").style.backgroundColor = colr;
+    document.getElementById("snackbar").style.backgroundColor = color;
     var x = document.getElementById("snackbar");
     x.className = "show";
     setTimeout(function() {
@@ -44,14 +46,15 @@
   .container {
     margin-top: 20vh;
   }
+ .snackbar-container {
+    margin-top: 7vh;
+  }
 </style>
 
-<div class="form-group d-flex justify-content-center">
-  <div class="col-md-6 text-center">
-    <button on:click={() => myFunctio()}>Submit</button>
-    <div id="snackbar">{t}</div>
-  </div>
+<div class="snackbar-container">
+  <div id="snackbar">{message}</div>
 </div>
+
 <div class="container">
   <div class="row justify-content-center">
     <div

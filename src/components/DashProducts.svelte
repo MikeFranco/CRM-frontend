@@ -10,7 +10,7 @@ let data=[30,19,19,70];
 			 	<div id="clientes" class="col-12 col-md-4 col-lg-6 d-flex justify-content-center">
           			<article class="card" style="width: 100%; height: 100%;">
                 		<div class="card-body">
-							<h5 class="card-title">Productos comprados</h5>
+							<h5 class="card-title">Products purchased</h5>
 							   <article class="card" style="width: 100%;height:18%;background: #FF6384;">
                 					<div class="card-body">
 										<h5 class="card-title">Cojines</h5>

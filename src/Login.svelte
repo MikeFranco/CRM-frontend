@@ -1,9 +1,10 @@
 <script>
   	import { Router, Route, Link } from "svelte-routing";
-  	import Home from "./Home.svelte";
+    import Home from "./Home.svelte";
+    import Signup from "./components/SignUp.svelte";
   	export let url = ""; //This property is necessary declare to avoid ignore the Router
 </script>
-
+<Router url="{url}">
 <body>
 <div class="limiter">
 		<div class="container-login100">
@@ -29,12 +30,6 @@
 					</div>
         <div class=" container">
 					<div class="flex-sb-m w-full p-b-30 row">
-						<div class="contact100-form-checkbox col-12 col-md-4 col-lg-6 d-flex justify-content-center ">
-							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-							<label class="label-checkbox100" for="ckb1">
-								Remember me
-							</label>
-						</div>
               <div>
               	<a href="$" class="txt1 justify-content-center col-12 col-md-4 col-lg-6 d-flex justify-content-center">
 								Forgot Password?
@@ -45,7 +40,14 @@
 					<Router url="{url}">
 
 					<div class="container-login100-form-btn justify-content-center">
-						<a href="/" class="btn btn-outline-primary button" type="button" style="width:100%;">Login</a>
+              <div class="row">
+                <div class="col-12 col-md-4 col-lg-6 ">
+            <a href="/" class="btn btn-outline-primary button" type="button" style="width:100%;">Login</a>
+                </div>
+            <div class="col-12 col-md-4 col-lg-6 ">
+            <a href="Signup" class="btn btn-outline-primary button" type="button" style="width:100%;">Sign up</a>
+               </div>
+              </div>
 					</div>
 					</Router>
 				</form>
@@ -53,6 +55,15 @@
 		</div>
 	</div>
 	</body>
+	<Route path="Signup" component="{Signup}" />
+
+    <!--for now the router just support case sensitive,
+        one workaround colud be add two time the route
+        Example.
+       <Route path="About" component="{About}" /> 
+    -->
+    <Route path="/"></Route>
+  </Router>
 	<style>
 	  #Log {
 	width: 100%;
@@ -160,10 +171,7 @@ a:hover {
 }
 
 /*---------------------------------------------*/
-label {
-  display: block;
-  margin: 0;
-}
+
 
 /*---------------------------------------------*/
 
@@ -349,53 +357,7 @@ input.input100 {
 /*==================================================================
 [ Restyle Checkbox ]*/
 
-.input-checkbox100 {
-  display: none;
-}
 
-.label-checkbox100 {
-  font-family: Poppins-Regular;
-  font-size: 13px;
-  color: #999999;
-  line-height: 1.4;
-
-  display: block;
-  position: relative;
-  padding-left: 26px;
-  cursor: pointer;
-}
-
-.label-checkbox100::before {
-  content: "\f00c";
-  font-family: FontAwesome;
-  font-size: 13px;
-  color: transparent;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  border-radius: 2px;
-  background: #fff;
-  border: 1px solid #e6e6e6;
-  left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.input-checkbox100:checked + .label-checkbox100::before {
-  color: #3498db;
-}
 
 /*------------------------------------------------------------------
 [ Button ]*/

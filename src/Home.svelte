@@ -4,8 +4,11 @@
 	import Delegaciones from './components/Dashdelegaciones.svelte';
 	import Users from './components/Dashusers.svelte';
 	import Tabs from './shared/Tabs.svelte';
-	let items = ['Usuarios', 'Delegacion', 'Productos'];
-	let activeitem = 'Usuarios';
+	let AP = ['Adorno', 'Garcia', 'Montes'];
+	let AM = ['Ortega', 'Ortega', 'Hernandez'];
+	let PN = ['Braulio', 'Ruben', 'Gerardo'];
+	let SN = ['Elias', 'Uriel', 'Daniel'];
+	let activeitem = 'Adorno';
 	const tabChange = (e) => {
 		activeitem = e.detail;
 	} 

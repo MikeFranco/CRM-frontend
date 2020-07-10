@@ -11,6 +11,7 @@
 	import EUser from "./components/EditUsers.svelte";
 	import VUser from "./components/ViewUsers.svelte";
 	import VGrups from "./components/ViewGrups.svelte";
+	import EditGrups from "./components/EditGrups.svelte";
   	export let url = ""; //This property is necessary declare to avoid ignore the Router
 </script>
 <Router url="{url}">
@@ -41,7 +42,7 @@
 		  <li class="drop-down"><a href="#nada">Edit</a>
             <ul>
               <li><a href="EUser">User</li>
-              <li><a href="EGrups">Grups</li>             
+              <li><a href="edit-groups">Grups</li>             
             </ul>
           </li>
 		  <li class="drop-down"><a href="#nada">View</a>
@@ -77,6 +78,7 @@
 	<Route path="EUser" component="{EUser}" /> 
 	<Route path="VUser" component="{VUser}" />
 	<Route path="VGrups" component="{VGrups}" />
+	<Route path="edit-groups" component="{EditGrups}" />
     <!--for now the router just support case sensitive,
         one workaround colud be add two time the route
         Example.

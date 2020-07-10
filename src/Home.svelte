@@ -64,14 +64,6 @@
     margin-bottom: 30%;
     cursor: pointer;
   }
-  button,
-  a {
-    color: inherit;
-  }
-  button,
-  a {
-    background-color: transparent;
-  }
   *,
   *:before,
   *:after {

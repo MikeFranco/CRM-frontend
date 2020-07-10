@@ -5,6 +5,7 @@
   import Delegaciones from "./components/Dashdelegaciones.svelte";
   import Users from "./components/Dashusers.svelte";
   import Tabs from "./shared/Tabs.svelte";
+  import { navigate } from "svelte-routing";
   const tabChange = e => {
     activeitem = e.detail;
 	};
@@ -43,7 +44,7 @@
   button:hover,
   button:active{
     color: #fff;
-    background-color: 3498db;
+    background-color: #3498db;
 
   }
   button:active,
@@ -79,23 +80,23 @@
   }
 
 #container{
-	padding: 0;
-	margin: 0px;
+  padding: 0;
+  margin: 0px;
 }
 .user {
-	padding: 0;
-	width: 50%;
-	margin: 0px;
-	padding: 0px;
+  padding: 0;
+  width: 50%;
+  margin: 0px;
+  padding: 0px;
     
 
 }
 .group {
-	width: 50%;
-	height: 70%;
-	margin: 0px;
-	padding: 0px;
+  width: 50%;
+  height: 70%;
+  margin: 0px;
+  padding: 0px;
 
 }
-	
+  
 </style>

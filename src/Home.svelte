@@ -1,19 +1,20 @@
 <script>
-	import Hero from './components/Hero.svelte';
-	import Products from './components/DashProducts.svelte';
-	import Delegaciones from './components/Dashdelegaciones.svelte';
-	import Users from './components/Dashusers.svelte';
-	import Tabs from './shared/Tabs.svelte';
-	let AP = ['Adorno', 'Garcia', 'Montes'];
-	let AM = ['Ortega', 'Ortega', 'Hernandez'];
-	let PN = ['Braulio', 'Ruben', 'Gerardo'];
-	let SN = ['Elias', 'Uriel', 'Daniel'];
-	let activeitem = 'Adorno';
-	const tabChange = (e) => {
-		activeitem = e.detail;
-	} 
-
+  import { IDuser } from "./store.js";
+  import Hero from "./components/Hero.svelte";
+  import Products from "./components/DashProducts.svelte";
+  import Delegaciones from "./components/Dashdelegaciones.svelte";
+  import Users from "./components/Dashusers.svelte";
+  import Tabs from "./shared/Tabs.svelte";
+  const tabChange = e => {
+    activeitem = e.detail;
+	};
+	let userId;
+	IDuser.subscribe(value => {
+		userId = value;
+	})
 </script>
+
+
 <Hero />
 <section >
 <div id="container">

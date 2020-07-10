@@ -1,21 +1,17 @@
 <script>
-  import axios from 'axios';
-  import { Router, Route, Link } from "svelte-routing";
+  import axios from "axios";
+  import { navigate } from "svelte-routing";
   import { IDuser } from "./store.js";
   import Home from "./Home.svelte";
   import Signup from "./components/SignUp.svelte";
-  export let url = ""; //This property is necessary declare to avoid ignore the}let password;
-  let user = ["mike"];
   let email;
   let password;
   let message;
   let color;
-  function Iduser() {
-    IDuser.subscribe(value => {
-      //this change the user for his ID
-      return (user = value);
-    });
-  }
+
+  const setUserId = userId => {
+    IDuser.set(userId);
+  };
   const login = event => {
     const body = {
       email,
@@ -25,9 +21,13 @@
     axios
       .post("http://localhost:5001/login", body)
       .then(response => {
+        console.log("%c⧭", "color: #408059", IDuser);
         console.log("%c⧭", "color: #ffcc00", response);
-        //showSnackbar(`Bienvenido ${response.data.login.firstName}`)
-        showSnackbar("Login ");
+        const user = response.data.currentUser._id;
+        IDuser.set(user);
+        setTimeout(() => {
+          navigate("/", { replace: false });
+        }, 1000);
       })
       .catch(error => {
         event.preventDefault();
@@ -37,17 +37,23 @@
 
   const showSnackbar = (text, color) => {
     message = text;
+
+    console.log("%c⧭", "color: #99adcc", "showNack");
     var div = document.getElementById("snackbar");
     document.getElementById("snackbar").style.backgroundColor = color;
     var x = document.getElementById("snackbar");
     x.className = "show";
-    setTimeout(function() {
-      x.className = x.className.replace("show", "");
-    }, 3000);
+    x.className = x.className.replace("show", "");
+    setTimeout(function() {}, 3000);
   };
 </script>
 
 <style>
+  .snackbar-container {
+    position: fixed;
+    bottom: 0;
+    left: 60%;
+  }
   #Log {
     width: 100%;
     height: 30vh;
@@ -106,7 +112,7 @@
   /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
-  @font-face {
+  /*  @font-face {
     font-family: Poppins-Regular;
     src: url("../fonts/poppins/Poppins-Regular.ttf");
   }
@@ -125,7 +131,7 @@
     font-family: Poppins-SemiBold;
     src: url("../fonts/poppins/Poppins-SemiBold.ttf");
   }
-
+ */
   /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 
@@ -386,88 +392,81 @@
   }
 </style>
 
-<Router {url}>
-  <body>
-    <div class="limiter">
-      <div class="container-login100">
-        <div class="wrap-login100">
-          <div class="login100-form-title" id="Log">
-            <br />
-            <br />
-            <span class="login100-form-title-1">Sign In</span>
+<div class="snackbar-container">
+  <div id="snackbar">{message}</div>
+</div>
+
+<body>
+  <div class="limiter">
+    <div class="container-login100">
+      <div class="wrap-login100">
+        <div class="login100-form-title" id="Log">
+          <br />
+          <br />
+          <span class="login100-form-title-1">Sign In</span>
+        </div>
+
+        <form class="login100-form validate-form">
+          <div
+            class="wrap-input100 validate-input m-b-26"
+            data-validate="email is required">
+            <span class="label-input100">Email</span>
+            <input
+              bind:value={email}
+              class="input100"
+              type="text"
+              name="email"
+              placeholder="Enter email"
+              required />
+            <span class="focus-input100" />
           </div>
 
-          <form class="login100-form validate-form">
-            <div
-              class="wrap-input100 validate-input m-b-26"
-              data-validate="email is required">
-              <span class="label-input100">Email</span>
-              <input
-                bind:value={email}
-                class="input100"
-                type="text"
-                name="email"
-                placeholder="Enter email"
-                required />
-              <span class="focus-input100" />
-            </div>
-
-            <div
-              class="wrap-input100 validate-input m-b-18"
-              data-validate="Password is required">
-              <span class="label-input100">Password</span>
-              <input
-                bind:value={password}
-                class="input100"
-                type="password"
-                name="pass"
-                placeholder="Enter password"
-                required />
-              <span class="focus-input100" />
-            </div>
-            <div class=" container">
-              <div class="flex-sb-m w-full p-b-30 row">
-                <div>
-                  <a
-                    href="$"
-                    class="txt1 justify-content-center col-12 col-md-4 col-lg-6
-                    d-flex justify-content-center">
-                    Forgot Password?
-                  </a>
-                </div>
+          <div
+            class="wrap-input100 validate-input m-b-18"
+            data-validate="Password is required">
+            <span class="label-input100">Password</span>
+            <input
+              bind:value={password}
+              class="input100"
+              type="password"
+              name="pass"
+              placeholder="Enter password"
+              required />
+            <span class="focus-input100" />
+          </div>
+          <div class=" container">
+            <div class="flex-sb-m w-full p-b-30 row">
+              <div>
+                <a
+                  href="$"
+                  class="txt1 justify-content-center col-12 col-md-4 col-lg-6
+                  d-flex justify-content-center">
+                  Forgot Password?
+                </a>
               </div>
             </div>
-            <Router {url}>
+          </div>
 
-              <div class="container-login100-form-btn justify-content-center">
-                <div class="row">
-                  <div class="col-12 col-md-4 col-lg-6 ">
-                    <button on:click={login}>Login</button>
+          <div class="container-login100-form-btn justify-content-center">
+            <div class="row">
+              <div class="col-12 col-md-4 col-lg-6 ">
+                <button on:click={login}>Login</button>
 
-                  </div>
-                  <div class="col-12 col-md-4 col-lg-6 ">
-                    <a
-                      href="Signup"
-                      class="btn btn-outline-primary button"
-                      type="button"
-                      style="width:100%;">
-                      Sign up
-                    </a>
-                  </div>
-                </div>
               </div>
-            </Router>
-          </form>
-        </div>
+              <div class="col-12 col-md-4 col-lg-6 ">
+                <a
+                  href="Signup"
+                  class="btn btn-outline-primary button"
+                  type="button"
+                  style="width:100%;">
+                  Sign up
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </form>
       </div>
     </div>
-  </body>
-  <Route path="Signup" component={Signup} />
-
-  <!--for now the router just support case sensitive,
-        one workaround colud be add two time the route
-        Example.
-       <Route path="About" component="{About}" /> 
-    -->
-  <Route path="/" />
-</Router>
+  </div>
+</body>

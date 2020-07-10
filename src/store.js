@@ -1,3 +1,2 @@
-import {writable} from 'svelte/store';
-let iduser=['qwe23123swqswqe'];
-export const IDuser = writable( iduser);
+import { writable } from 'svelte/store';
+export const IDuser = writable(0);

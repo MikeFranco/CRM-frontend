@@ -1,4 +1,5 @@
 <script>
+    import { navigate } from "svelte-routing";
   import axios from "axios";
   let firstName;
   let secondName;
@@ -41,6 +42,9 @@
             district = "";
             purchased = "";
             password = "";
+            setTimeout(() => {
+                navigate("/Login", { replace: true }); 
+            }, 3000)
         })
         .catch(error => {
           showSnackbar("Hubo un error al conectar con la base de datos", "red");

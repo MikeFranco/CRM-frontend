@@ -1,118 +1,108 @@
 <script>
-	import Tabs from '../shared/TabsVUser.svelte';
-    let AP = ['Adorno Ortega Braulio Elias', 'Garcia Ortega Ruben Uriel', 'Montes Hernandez Gerardo Daniel','Aguayo González Jaime Francisco','Chávez Heredia Andrea '];
-	let activeitem = 'Adorno';
-	const tabChange = (e) => {
-		activeitem = e.detail;
-  } 
-  const myFunction =()=>{
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-const myFunction2 =()=>{
-  var x = document.getElementById("myDIV2");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-const myFunction3 =()=>{
-  var x = document.getElementById("myDIV3");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
+  import { createEventDispatcher, onMount } from "svelte";
+  import axios from "axios";
+  const dispatch = createEventDispatcher();
+  const back = "http://localhost:5001";
+  let showTable = false;
+  let groups = [
+    {
+      firstName: "Mike",
+      firstLastName: "Franco",
+      secondLastName: "",
+      email: "unemail3@gmail.com",
+      password: "123456",
+      phone: "5544221133",
+      district: "Benito Juárez",
+      bought: "yes",
+      purchased: "cama",
+      role: "admin"
+    },
 
+    {
+      firstName: "Mike",
+      secondName: "Angel",
+      firstLastName: "Franco",
+      secondLastName: "",
+      email: "unemail3@gmail.com",
+      password: "123456",
+      phone: "5544221133",
+      district: "Benito Juárez",
+      bought: "yes",
+      purchased: "cama",
+      role: "admin"
+    },
+
+    {
+      firstName: "Mike",
+      secondName: "Angel",
+      firstLastName: "Franco",
+      secondLastName: "",
+      email: "unemail3@gmail.com",
+      password: "123456",
+      phone: "5544221133",
+      district: "Benito Juárez",
+      bought: "yes",
+      purchased: "cama",
+      role: "admin"
+    }
+  ];
+  const getGroups = () => {
+    const adminId = "5f07a503656fe87849dfa85a";
+    axios
+      .get(`${back}/groups?adminId=${adminId}`)
+      .then(response => {
+        groups = response.data.getGroupsById;
+        showTable = true;
+      })
+      .catch(error => console.error(error));
+  };
+  const deleteGroup = id => {
+    axios
+      .delete(`${back}/groups?id=${id}`)
+      .then(response => {
+        alert("Borrado correctamente");
+      })
+      .catch(error => console.error(error));
+  };
+  onMount(getGroups);
 </script>
 
-<div class="container aligin-items-center">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well well-sm">
-                    <div class="d-flex justify-content-center">
-                    <legend class="text-center header" id="View">Grups</legend>
-                    </div>
-            </div>
-        </div>
-    </div>
-
-<div class="container d-flex justify-content-center">
-     <div class="row">
-          <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
-            <div class="member">
-              <img src="assets/img/team/team-2.jpg" alt="">
-              <h4>HA </h4>
-               <button class="btn btn-primary" on:click={() => myFunction()}>
-                   Details
-              </button>
-              <div class="collapse" id="myDIV">
-                <div class="card card-body">
-                  <div class="social">
-                      <Tabs {activeitem} {AP} on:tabChange={tabChange}  />
-                      </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
-            <div class="member">
-              <img src="assets/img/team/team-2.jpg" alt="">
-              <h4>SO</h4>
-               <button class="btn btn-primary" on:click={() => myFunction2()}>
-                   Details
-              </button>
-              <div class="collapse" id="myDIV2">
-                <div class="card card-body">
-                  <div class="social">
-                      <Tabs {activeitem} {AP} on:tabChange={tabChange}  />
-                      </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
-            <div class="member">
-              <img src="assets/img/team/team-3.jpg" alt="">
-              <h4>PLA</h4>
-            <button class="btn btn-primary" on:click={() => myFunction3()}>
-                Details
-            </button>
-              <div class="collapse" id="myDIV3">
-                <div class="card card-body">
-                  <div class="social">
-                      <Tabs {activeitem} {AP} on:tabChange={tabChange}  />
-                      </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-</div>
-</div>
 <style>
- #View {
-	width: 100%;
-	height: 30vh;
-	background: url("/img/ViewU.jpg") center center;
-	background-size: cover;
-	position: relative;
-	margin-top: 70px;
-	padding: 0;
+  #muestra {
+    margin-top: 15vh;
   }
-   .header {
-   margin: 0 0 10px 0;
-	font-size: 48px;
-	font-weight: 700;
-	line-height: 56px;
-	color: #fff;
-}
 </style>
-  
+
+{#if showTable}
+  <table id="muestra" class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Group Name</th>
+        <th>Users inside</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {#each groups as group}
+        <tr>
+          <td>
+            <p>{group.name}</p>
+          </td>
+          <td>
+            <p>{group.users.length}</p>
+          </td>
+          <td>
+            <input
+              alt="groups"
+              type="image"
+              src="/img/drop.png"
+              width="45"
+              height="45"
+              on:click={() => deleteGroup(group._id)} />
+          </td>
+        </tr>
+      {/each}
+
+    </tbody>
+  </table>
+{/if}

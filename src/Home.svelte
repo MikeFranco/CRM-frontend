@@ -20,10 +20,10 @@
 <div id="container">
 	<div class="row total">
 		<div class="col-md-6 user d-flex justify-content-center ">
-			<button href="#usuaerio">lola </button>  
+			<button href="#usuaerio">Users </button>  
 		</div>
 		<div class="col-md-6 group d-flex justify-content-center ">
-			<button href="#grupo">lola </button> 
+			<button href="#grupo">Groups </button> 
 		</div>
 		
 </div>
@@ -39,35 +39,30 @@
 -->
 
 <style>
-.button:hover {
-    background-color: #3498db;
-    color: white;
-  }
+
   button:hover,
-  button:active,
-  a:hover,
-  a:active {
-    color: #3498db;
+  button:active{
+    color: #fff;
+    background-color: 3498db;
+
   }
   button:active,
-  button:hover,
-  a:hover,
-  a:active {
+  button:hover{
     outline-width: 0;
   }
-  button,
-  .button {
+  button
+  {
     background-color: white;
     color: black;
     border: 2px solid #3498db;
-    padding: 30% 30%;
+    padding: 20% 30%;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-	margin-left: 20px;
-	margin-bottom: 55%;
-	cursor: pointer;
+    font-size: 80px;
+    margin-left: 20px;
+    margin-bottom: 30%;
+    cursor: pointer;
   }
   button,
   a {

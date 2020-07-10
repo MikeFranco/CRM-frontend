@@ -56,6 +56,9 @@
       })
       .catch(error => console.error(error));
   };
+  const editGroup = group => {
+    console.log('Me faltó ésto :(');
+  }
   const deleteGroup = id => {
     axios
       .delete(`${back}/groups?id=${id}`)
@@ -68,17 +71,33 @@
 </script>
 
 <style>
+  #Reg {
+    width: 100%;
+    height: 30vh;
+    background: url("/img/Edit.jpg") center center;
+    background-size: cover;
+    position: relative;
+    margin-top: 70px;
+    padding: 0;
+    font-size: 50px;
+  }
   #muestra {
     margin-top: 15vh;
   }
 </style>
 
+<fieldset>
+  <div class="d-flex justify-content-center">
+    <legend class="text-center header" id="Reg">Groups</legend>
+  </div>
+</fieldset>
 {#if showTable}
   <table id="muestra" class="table">
     <thead class="thead-dark">
       <tr>
         <th>Group Name</th>
         <th>Users inside</th>
+        <th>Edit</th>
         <th>Delete</th>
       </tr>
     </thead>
@@ -90,6 +109,15 @@
           </td>
           <td>
             <p>{group.users.length}</p>
+          </td>
+          <td>
+            <input
+              alt="users"
+              type="image"
+              src="/img/edit.png"
+              width="45"
+              height="45"
+              on:click={() => editGroup(group)} />
           </td>
           <td>
             <input

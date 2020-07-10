@@ -1,9 +1,11 @@
 <script>
-	import Tabs from '../shared/TabsVUser.svelte';
-    let AP = ['Adorno Ortega Braulio Elias', 'Garcia Ortega Ruben Uriel', 'Montes Hernandez Gerardo Daniel','Aguayo González Jaime Francisco','Chávez Heredia Andrea '];
-	let activeitem = 'Adorno';
+	import Tabs from '../shared/TabsGoups.svelte';
+  let AP = ['Adorno Ortega Braulio Elias', 'Garcia Ortega Ruben Uriel', 'Montes Hernandez Gerardo Daniel','Aguayo González Jaime Francisco','Chávez Heredia Andrea '];
+  let Group = ['HA', 'SO'];
+  let activeitem = 'Adorno';
+  let activeitemG = 'HA';
 	const tabChange = (e) => {
-		activeitem = e.detail;
+		activeitemG = e.detail;
   } 
   const myFunction =()=>{
   var x = document.getElementById("myDIV");
@@ -42,60 +44,11 @@ const myFunction3 =()=>{
             </div>
         </div>
     </div>
-
+</div>
 <div class="container d-flex justify-content-center">
      <div class="row">
-          <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
-            <div class="member">
-              <img src="assets/img/team/team-2.jpg" alt="">
-              <h4>HA </h4>
-               <button class="btn btn-primary" on:click={() => myFunction()}>
-                   Details
-              </button>
-              <div class="collapse" id="myDIV">
-                <div class="card card-body">
-                  <div class="social">
-                      <Tabs {activeitem} {AP} on:tabChange={tabChange}  />
-                      </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
-            <div class="member">
-              <img src="assets/img/team/team-2.jpg" alt="">
-              <h4>SO</h4>
-               <button class="btn btn-primary" on:click={() => myFunction2()}>
-                   Details
-              </button>
-              <div class="collapse" id="myDIV2">
-                <div class="card card-body">
-                  <div class="social">
-                      <Tabs {activeitem} {AP} on:tabChange={tabChange}  />
-                      </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
-            <div class="member">
-              <img src="assets/img/team/team-3.jpg" alt="">
-              <h4>PLA</h4>
-            <button class="btn btn-primary" on:click={() => myFunction3()}>
-                Details
-            </button>
-              <div class="collapse" id="myDIV3">
-                <div class="card card-body">
-                  <div class="social">
-                      <Tabs {activeitem} {AP} on:tabChange={tabChange}  />
-                      </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-</div>
+          <Tabs {activeitemG} {Group} on:tabChange={tabChange}  />
+  </div>
 </div>
 <style>
  #View {

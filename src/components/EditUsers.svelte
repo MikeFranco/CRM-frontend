@@ -66,7 +66,7 @@ console.log("holi");
 </style>
 
 <div class="snackbar-container">
-  <div id="snackbar">{message}</div>
+  
 </div>
 
 <div class="container aligin-items-center">

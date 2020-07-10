@@ -32,7 +32,7 @@ export let AP ;
                                 <option value ="Venustiano Carranza">Venustiano Carranza</option>
                                 <option value ="Xochimilco">Xochimilco</option>
                                 </select> 
-                    </td> <td> <textarea> {ap}</textarea></td><td> <input type=image src="/img/drop.png"width="45"height="45" onclick="eliminar()"></td></tr>  
+                    </td> <td> <textarea> {ap}</textarea></td><td> <input alt="users" type=image src="/img/drop.png"width="45"height="45" onclick="eliminar()"></td></tr>  
         {/each}  
        
     

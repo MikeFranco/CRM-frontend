@@ -8,6 +8,9 @@
   let phone;
   let district;
   let purchased;
+  let message;
+  let color;
+
   const createUser = event => {
     const adminId = "5f065d34b89f6c5b54174eca";
     const user = {
@@ -26,24 +29,24 @@
       axios
         .post("http://localhost:5001/users", body)
         .then(response => {
+          showSnackbar("Usuario creado correctamente", "green");
           console.log("%c⧭", "color: #997326", response);
         })
         .catch(error => {
+          showSnackbar("Hubo un error al conectar con la base de datos", "red");
           console.error(error);
         });
     } else {
-      alert("Favor de llenar los campos requeridos");
+      showSnackbar("Por favor, completa los datos requeridos", "red");
     }
     event.preventDefault();
     console.log("%c⧭", "color: #e57373", "submit");
   };
 
-  let t = " ya estoy hasta la puta madre";
-  let colr = "purple";
-  const myFunctio = () => {
-    let t;
+  const showSnackbar = (text, color) => {
+    message = text;
     var div = document.getElementById("snackbar");
-    document.getElementById("snackbar").style.backgroundColor = colr;
+    document.getElementById("snackbar").style.backgroundColor = color;
     var x = document.getElementById("snackbar");
     x.className = "show";
     setTimeout(function() {
@@ -68,6 +71,11 @@
     font-weight: 700;
     line-height: 56px;
     color: #fff;
+  }
+  .snackbar-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
   }
   input:invalid {
     border: 2px solid red;
@@ -107,6 +115,10 @@
     box-sizing: inherit;
   }
 </style>
+
+<div class="snackbar-container">
+  <div id="snackbar">{message}</div>
+</div>
 
 <div class="container aligin-items-center">
   <div class="row">
@@ -269,12 +281,6 @@
                   style="width:100%;">
                   Submit
                 </a> -->
-            </div>
-            <div class="form-group d-flex justify-content-center">
-              <div class="col-md-6 text-center">
-                <button on:click={() => myFunctio()}>Submit</button>
-                <div id="snackbar">{t}</div>
-              </div>
             </div>
           </div>
         </form>

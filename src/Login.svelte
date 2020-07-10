@@ -1,8 +1,15 @@
 <script>
-  	import { Router, Route, Link } from "svelte-routing";
+    let user=['mike'];
+    import { Router, Route, Link } from "svelte-routing";
+    import {IDuser} from './store.js';
     import Home from "./Home.svelte";
     import Signup from "./components/SignUp.svelte";
-  	export let url = ""; //This property is necessary declare to avoid ignore the Router
+    export let url = ""; //This property is necessary declare to avoid ignore the 
+    function Iduser(){
+    IDuser.subscribe(value =>{//this change the user for his ID
+     return user=value;
+    })
+    }
 </script>
 <Router url="{url}">
 <body>
@@ -42,7 +49,7 @@
 					<div class="container-login100-form-btn justify-content-center">
               <div class="row">
                 <div class="col-12 col-md-4 col-lg-6 ">
-                <button onclick="myFunction()">Login</button>
+                <button on:click={Iduser}>Login</button>
            
                 </div>
             <div class="col-12 col-md-4 col-lg-6 ">

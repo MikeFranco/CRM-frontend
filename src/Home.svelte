@@ -14,14 +14,21 @@
 	})
 </script>
 
-<style>
-
-</style>
 
 <Hero />
-<main id="main">
-  <br />
-  <!--> <Tabs {activeitem} {items} on:tabChange={tabChange}  />
+<section >
+<div id="container">
+	<div class="row total">
+		<div class="col-md-6 user d-flex justify-content-center ">
+			<button href="#usuaerio">lola </button>  
+		</div>
+		<div class="col-md-6 group d-flex justify-content-center ">
+			<button href="#grupo">lola </button> 
+		</div>
+		
+</div>
+</section>
+<!--> <Tabs {activeitem} {items} on:tabChange={tabChange}  />
 {#if activeitem === 'Usuarios' }
 <Users />
 {:else if activeitem === 'Delegacion'}
@@ -30,4 +37,70 @@
 <Products />
 {/if}
 -->
-</main>
+
+<style>
+.button:hover {
+    background-color: #3498db;
+    color: white;
+  }
+  button:hover,
+  button:active,
+  a:hover,
+  a:active {
+    color: #3498db;
+  }
+  button:active,
+  button:hover,
+  a:hover,
+  a:active {
+    outline-width: 0;
+  }
+  button,
+  .button {
+    background-color: white;
+    color: black;
+    border: 2px solid #3498db;
+    padding: 30% 30%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	margin-left: 20px;
+	margin-bottom: 55%;
+	cursor: pointer;
+  }
+  button,
+  a {
+    color: inherit;
+  }
+  button,
+  a {
+    background-color: transparent;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+#container{
+	padding: 0;
+	margin: 0px;
+}
+.user {
+	padding: 0;
+	width: 50%;
+	margin: 0px;
+	padding: 0px;
+    
+
+}
+.group {
+	width: 50%;
+	height: 70%;
+	margin: 0px;
+	padding: 0px;
+
+}
+	
+</style>

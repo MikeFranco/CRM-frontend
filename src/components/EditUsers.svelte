@@ -1,5 +1,49 @@
 <script>
-	import Tabs from '../shared/TabsUsers.svelte';
+    import Tabs from '../shared/TabsUsers.svelte';
+     let User = [
+
+{
+ firstName: "Mike",
+  secondName: "Angel",
+  firstLastName: "Franco",
+  secondLastName: "",
+  email: "unemail3@gmail.com",
+  password: "123456",
+  phone: "5544221133",
+  district: "Benito Juárez",
+  bought: "yes",
+  purchased: "cama",
+  role: "admin"
+},
+
+{
+  firstName: "Mike",
+  secondName: "Angel",
+  firstLastName: "Franco",
+  secondLastName: "",
+  email: "unemail3@gmail.com",
+  password: "123456",
+  phone:"5544221133",
+  district: "Benito Juárez",
+  bought: "yes",
+  purchased: "cama",
+  role: "admin"
+},
+
+{
+  firstName: "Mike",
+  secondName: "Angel",
+  firstLastName: "Franco",
+  secondLastName: "",
+  email: "unemail3@gmail.com",
+  password: "123456",
+  phone: "5544221133",
+  district: "Benito Juárez",
+  bought: "yes",
+  purchased: "cama",
+  role: "admin"
+}
+];
     let AP = ['Adorno Ortega Braulio Elias', 'Garcia Ortega Ruben Uriel', 'Montes Hernandez Gerardo Daniel','Aguayo González Jaime Francisco','Chávez Heredia Andrea '];
 	let activeitem = 'Adorno';
 	const tabChange = (e) => {
@@ -33,7 +77,7 @@
     <div class="container d-flex justify-content-center">
      <div class="row">
         
-         <Tabs {activeitem} {AP} on:tabChange={tabChange}  />
+         <Tabs {activeitem} {User} on:tabChange={tabChange}  />
        
      </div>
     

@@ -13,7 +13,7 @@
   --------------------------------------------------------------*/
   #hero {
 	width: 100%;
-	height: 60vh;
+	height: 30%;
 	background: url("/img/hero-bg.jpg") center center;
 	background-size: cover;
 	position: relative;
@@ -51,13 +51,6 @@
 	color: rgba(255, 255, 255, 0.8);
 	margin-bottom: 30px;
 	font-size: 24px;
-  }
-  
-  
-  @media (max-width: 992px) {
-	#hero {
-	  height: calc(100vh - 70px);
-	}
   }
   
   @media (max-width: 768px) {
